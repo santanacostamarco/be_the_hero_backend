@@ -1,0 +1,19 @@
+{
+  "name": "be_the_hero",
+  "version": "1.0.0",
+  "description": "Rocketseat Oministack 11.0 week project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "Marco Santana",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
