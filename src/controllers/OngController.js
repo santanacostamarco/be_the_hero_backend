@@ -3,7 +3,19 @@ const crypto = require('crypto');
 
 module.exports = {
     async index(request, response) {
-        const ongs = await connection('ongs').select('*');
+
+        const { page = 1 } = request.query;
+        const limit = 5;
+
+        const ongs = await connection('ongs')
+            .select('*')
+            .limit(limit)
+            .offset((page - 1) * limit);
+
+        const [count] = await connection('ongs').select('*').count();
+
+        response.header('X-Total-Count', count['count(*)']);
+
         return response.json(ongs)
     },
 
